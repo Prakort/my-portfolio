@@ -16,6 +16,9 @@ const details = [
   },
   {
     texts: "I am always looking forward to learning and growing personally and professionally."
+  },
+  {
+    texts: "How do I make people happy? My honest answer is cook for them 👨‍🍳and take your time to be there for them ⏳."
   }
 ]
 function AboutMe (props){
@@ -53,6 +56,6 @@ const useStyle = makeStyles((theme) => ({
   },
   sectionBox:{
     marginTop: 15,
-    marginBottom: 10,
+    marginBottom: 15,
   }
 }))
