@@ -1,0 +1,12 @@
+body{
+  background-color: #fdfcf1;
+  color: #324332;
+  /* margin: auto; */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 28px;
+  font-size: 18px;
+  width: auto;  
+  min-width: 300px;
+  /* font-family: 'Overpass,sans-serif'; */
+}

@@ -1,26 +1,168 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { 
+  makeStyles,
+  Grid,
+  Link
 
+} from '@material-ui/core';
+
+import ImageMe from './_images/prakort.png';
+import { ReactComponent as Pin } from './_images/map.svg';
+import { ReactComponent as Github } from './_images/icons8-github-3.svg';
+import { ReactComponent as LinkedIn } from './_images/icons8-linkedin.svg';
+import Mail from './_images/email.png';
+
+import AboutMe from './aboutMe';
+import Portfolio from './portfolio';
 function App() {
+  const classes = useStyle();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid className={classes.root} container justify="center">
+      <Grid container justify="center" alignItems="flex-start" direction="row" className={classes.box}>
+        <Grid container item xs={12} sm={12} md={4} direction="column" className={classes.leftSide}>
+
+            <img alt="Prakort Lean" className={classes.imageMe} src={ImageMe}/>
+       
+            <h3 alt="Prakort Lean full name" className={classes.fullName}>Prakort Lean</h3>
+            
+            <Grid container alignItems="center">
+              <span alt="Prakort Lean full name" className={classes.location}>Windsor, Ontario, Canada </span>
+              <Pin className={classes.pin}/>
+            </Grid>
+            <Grid className={classes.shortDescription}>
+              <p>
+                A senior Mathematics and Computer Science at University of Windsor
+              </p>
+            </Grid>
+            <Grid container justify="flex-start" direction="column" className={classes.linkBox}>
+              <p className={classes.link}>
+                Portfolio
+              </p>
+              <p className={classes.link}>
+                About me
+              </p>
+            </Grid>
+            <Grid container justify="flex-start" direction="row" className={classes.socialMedia}>
+              <Link href="https://github.com/prakort" style={{ marginLeft: -6}}>
+                <Github />
+              </Link>
+              <Link href="https://www.linkedin.com/in/prakort/" style={{ marginLeft: 6}}>
+                <LinkedIn/>
+              </Link>
+              <Link href="mailto:leanprakort@gmail.com">
+                  <img src={Mail} style={{width: 46, height: 45, marginTop: 3, marginLeft: 6}}/>
+              </Link>
+            </Grid>
+
+        </Grid>
+        <Grid container item xd={12} sm={12} md={8} className={classes.rightSide}>
+          <Portfolio/>
+          <AboutMe/>
+        </Grid>
+
+      </Grid>
+    </Grid>
   );
 }
 
 export default App;
+
+const useStyle = makeStyles((theme) => ({
+  root: {
+    height: '100%',
+    width: '100%',
+    margin: 'auto',
+    paddingRight: 40,
+    paddingLeft: 40,
+    paddingTop: 20,
+    paddingBottom: 50,
+    fontFamily: 'Overpass,sans-serif',
+    color: '#324332'
+  },
+  leftSide:{
+    padding: 20,
+    // backgroundColor: 'yellow',
+    ['@media (max-width:960px)']: { // eslint-disable-line no-useless-computed-key
+      borderRight: 'none'
+    },
+    ['@media (min-width:960px)']: { // eslint-disable-line no-useless-computed-key
+      borderRight: '1px solid #ddd',
+    }
+  },
+  rightSide:{
+
+    // backgroundColor: 'pink',
+    ['@media (max-width:960px)']: { // eslint-disable-line no-useless-computed-key
+      paddingLeft: 0,
+      marginTop: 30,
+    },
+    ['@media (min-width:960px)']: { // eslint-disable-line no-useless-computed-key
+      paddingLeft: 30,
+
+    
+    }
+  },
+
+  linkBox:{
+    marginBottom: 20,
+  },
+  socialMedia:{
+
+  },
+  box:{
+    width: 1000,
+    // backgroundColor: 'blue',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      width: '100%'
+    },
+    ['@media (min-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      width: 1000,
+    }
+  },
+  imageMe: {
+    width: 150,
+    height: 150
+  },
+  link:{
+    // fontWeight: '600',
+    margin: 0,
+    marginBottom: 10,
+    fontSize: 20,
+    '&:hover':{
+      color: '#3bba6c !important',
+      textDecoration: 'underline'
+    
+    }
+  },
+  fullName: {
+    marginTop: 30,
+    marginBottom: 0,
+    padding: 0,
+    fontFamily: 'Overpass,sans-serif',
+    fontSize: 28,
+    fontWeight: '800 !important'
+  },
+  location: {
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 10,
+    color: 'gray',
+    fontFamily: 'Lato,sans-serif',
+    fontWeight: '300'
+  },
+  pin: {
+    width: 20, 
+    height: 15,
+    marginLeft: 5,  
+    marginBottom: -6
+  },
+  shortDescription:{
+    marginBottom: 20,
+    paddingRight: 10,
+    // maxWidth: 300,
+    // minWidth: 300,
+    ['@media (max-width:960px)']: { // eslint-disable-line no-useless-computed-key
+      width: 300,
+    },
+  }
+}))
