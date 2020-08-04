@@ -102,10 +102,10 @@ const useStyle = makeStyles((theme) => ({
     // backgroundColor: 'pink',
     ['@media (max-width:960px)']: { // eslint-disable-line no-useless-computed-key
       paddingLeft: 0,
-      marginTop: 30,
+      marginTop: 20,
     },
     ['@media (min-width:960px)']: { // eslint-disable-line no-useless-computed-key
-      paddingLeft: 30,
+      paddingLeft: 40,
 
     
     }
