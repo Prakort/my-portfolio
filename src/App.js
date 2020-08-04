@@ -8,8 +8,10 @@ import {
 import AboutMe from './aboutMe';
 import Portfolio from './portfolio';
 import Wrapper from './profile';
+import firebase from './firebase';
 
 function App() {
+  firebase.analytics().logEvent('page_is_visited');
   return(
     <Router>
       <Switch>

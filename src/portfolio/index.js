@@ -4,6 +4,7 @@ import {
   makeStyles,
   Link
 } from '@material-ui/core';
+import firebase from '../firebase';
 
 const Projects =[
   {
@@ -81,7 +82,8 @@ const Exp= [
   }
 ]
 function Porfolio (props){
-  const classes = useStyle()
+  const classes = useStyle();
+  const logEvent = (name) => firebase.analytics().logEvent(name);
 
   return(
     <Grid container direction="column" >
@@ -103,7 +105,7 @@ function Porfolio (props){
           Projects.map((item, index) => (
             <Grid  key={index} item container md={12} lg={6} container direction="row" justify="center" alignItems="center" className={classes.data}>
               <Grid item xs={4} >
-                <Link href={item.link}>
+                <Link href={item.link} onClick={() => logEvent(item.link)}>
                 <img alt={item.name} src={item.icon} style={item.iconStyle} />
                 </Link>
               </Grid>

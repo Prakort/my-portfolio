@@ -8,22 +8,22 @@ import {
 
 import { Link as LinkRouter } from 'react-router-dom';
 
-import ImageMe from '../_images/prakort.png';
 import { ReactComponent as Pin } from '../_images/map.svg';
 import { ReactComponent as Github } from '../_images/icons8-github-3.svg';
 import { ReactComponent as LinkedIn } from '../_images/icons8-linkedin.svg';
-import Mail from '../_images/email.png';
+import firebase from '../firebase';
 
 
 function Profile(props) {
   const classes = useStyle();
   const path = window.location.pathname;
+  const logEvent = (name) => firebase.analytics().logEvent(name);
   return (
     <Grid className={classes.root} container justify="center">
       <Grid container justify="center" alignItems="flex-start" direction="row" className={classes.box}>
         <Grid container item xs={12} sm={12} md={4} direction="column" className={classes.leftSide}>
 
-            <img alt="Prakort Lean" className={classes.imageMe} src={ImageMe}/>
+            <img alt="Prakort Lean" className={classes.imageMe} src={require('../_images/prakort.png')}/>
        
             <h3 alt="Prakort Lean full name" className={classes.fullName}>Prakort Lean</h3>
             
@@ -44,22 +44,22 @@ function Profile(props) {
             
             </Grid> */}
             <Grid container justify="flex-start" direction="column" className={classes.linkBox}>
-              <LinkRouter className={path === '/'? classes.activeLink : classes.link} to="/">
+              <LinkRouter className={path === '/'? classes.activeLink : classes.link} to="/" onClick={() => logEvent('clicked_portfolio')}>
                 Portfolio
               </LinkRouter>
-              <LinkRouter className={path === '/about'? classes.activeLink : classes.link} to="/about">
+              <LinkRouter className={path === '/about'? classes.activeLink : classes.link} to="/about" onClick={() => logEvent('clicked_about_me')}>
                 About me
               </LinkRouter>
             </Grid>
             <Grid container justify="flex-start" direction="row" className={classes.socialMedia}>
-              <Link href="https://github.com/prakort" style={{ marginLeft: -6}}>
+              <Link href="https://github.com/prakort" style={{ marginLeft: -6}} onClick={() => logEvent('clicked_github')}>
                 <Github />
               </Link>
-              <Link href="https://www.linkedin.com/in/prakort/" style={{ marginLeft: 6}}>
+              <Link href="https://www.linkedin.com/in/prakort/" style={{ marginLeft: 6}} onClick={() => logEvent('clicked_linkedin')}>
                 <LinkedIn/>
               </Link>
-              <Link href="mailto:leanprakort@gmail.com">
-                  <img src={Mail} style={{width: 46, height: 45, marginTop: 3, marginLeft: 6}}/>
+              <Link href="mailto:leanprakort@gmail.com" onClick={() => logEvent('clicked_email')}>
+                  <img src={require('../_images/email.png')} style={{width: 46, height: 45, marginTop: 3, marginLeft: 6}}/>
               </Link>
             </Grid>
 
