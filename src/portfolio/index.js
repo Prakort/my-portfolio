@@ -103,7 +103,7 @@ function Porfolio (props){
       <Grid container direction="row" spacing={4}>
       { 
           Projects.map((item, index) => (
-            <Grid  key={index} item container md={12} lg={6} container direction="row" justify="center" alignItems="center" className={classes.data}>
+            <Grid  key={index} item md={12} lg={6} container direction="row" justify="center" alignItems="center" className={classes.data}>
               <Grid item xs={4} >
                 <Link href={item.link} onClick={() => logEvent(item.link)}>
                 <img alt={item.name} src={item.icon} style={item.iconStyle} />
@@ -135,7 +135,7 @@ function Porfolio (props){
       <Grid container direction="row" spacing={4}>
         { 
           Exp.map((item, index) => (
-            <Grid  key={index} item container md={12} lg={6} container direction="row" justify="center" alignItems="center" className={classes.data}>
+            <Grid  key={index} item md={12} lg={6} container direction="row" justify="center" alignItems="center" className={classes.data}>
               <Grid item xs={4} >
                 {/* <Link href={item.link}> */}
                 <img alt={item.name} src={item.icon} style={item.iconStyle} />

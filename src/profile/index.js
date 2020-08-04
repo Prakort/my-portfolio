@@ -59,7 +59,7 @@ function Profile(props) {
                 <LinkedIn/>
               </Link>
               <Link href="mailto:leanprakort@gmail.com" onClick={() => logEvent('clicked_email')}>
-                  <img src={require('../_images/email.png')} style={{width: 46, height: 45, marginTop: 3, marginLeft: 6}}/>
+                  <img alt="Email icon" src={require('../_images/email.png')} style={{width: 46, height: 45, marginTop: 3, marginLeft: 6}}/>
               </Link>
             </Grid>
 
