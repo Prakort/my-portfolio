@@ -18,6 +18,8 @@ function Profile(props) {
   const classes = useStyle();
   const path = window.location.pathname;
   const logEvent = (name) => firebase.analytics().logEvent(name);
+
+  const Cambodia_map_url = `https://www.google.com/maps/place/Cambodia/@12.1363981,102.7361403,7z/data=!3m1!4b1!4m5!3m4!1s0x310787bfd4dc3743:0xe4b7bfe089f41253!8m2!3d12.565679!4d104.990963`;
   return (
     <Grid className={classes.root} container justify="center">
       <Grid container justify="center" alignItems="flex-start" direction="row" className={classes.box}>
@@ -25,7 +27,7 @@ function Profile(props) {
 
             <img alt="Prakort Lean" className={classes.imageMe} src={require('../_images/prakort.png')}/>
        
-            <h3 alt="Prakort Lean full name" className={classes.fullName}>Prakort Lean</h3>
+            <h3 alt="Prakort Lean full name" className={classes.fullName}>Prakort Lean <Link alt="Cambodia on the map" href={Cambodia_map_url}>🇰🇭</Link></h3>
             
             <Grid container alignItems="center">
               <span alt="Prakort Lean full name" className={classes.location}>Windsor, Ontario, Canada </span>
@@ -88,7 +90,7 @@ const useStyle = makeStyles((theme) => ({
     color: '#324332'
   },
   leftSide:{
-    padding: 20,
+    // padding: 20,
     // backgroundColor: 'yellow',
     ['@media (max-width:960px)']: { // eslint-disable-line no-useless-computed-key
       borderRight: 'none'

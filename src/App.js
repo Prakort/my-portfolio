@@ -2,13 +2,18 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
+import firebase from './firebase';
+
+import NotFound from './notFound';
 import AboutMe from './aboutMe';
 import Portfolio from './portfolio';
 import Wrapper from './profile';
-import firebase from './firebase';
+
+
 
 function App() {
   firebase.analytics().logEvent('page_is_visited');
@@ -27,7 +32,12 @@ function App() {
             <AboutMe/>
           </Wrapper>
         </Route>
-
+        <Route path="/404" component={NotFound}>
+          <Wrapper>
+            <NotFound/>
+          </Wrapper>
+        </Route>
+        <Redirect to="/404" />
       </Switch>
     </Router>
   )

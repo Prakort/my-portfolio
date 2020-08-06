@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Grid,
-  makeStyles
+  makeStyles,
+  Link
 } from '@material-ui/core';
 
 const details = [
@@ -15,11 +16,12 @@ const details = [
     texts: "During my free time, I love to meet people. I am a listener and people find me very understanding and I am glad to listen to their stories. I enjoy strolling in the park and I love the smell of earth when it rains."
   },
   {
-    texts: "I am always looking forward to learning and growing personally and professionally."
+    texts: "How do I make people happy? My honest answer is cook for them 👨‍🍳and take your time to be there for them ⏳."
   },
   {
-    texts: "How do I make people happy? My honest answer is cook for them 👨‍🍳and take your time to be there for them ⏳."
-  }
+    texts: "I am always looking forward to learning and growing personally and professionally."
+  },
+
 ]
 function AboutMe (props){
   const classes = useStyle()
