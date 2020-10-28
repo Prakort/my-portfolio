@@ -13,6 +13,7 @@ import { ReactComponent as Github } from '../_images/icons8-github-3.svg';
 import { ReactComponent as LinkedIn } from '../_images/icons8-linkedin.svg';
 import firebase from '../firebase';
 
+import Pdf from '../_resume/Prakort_Lean_Resume.pdf';
 
 function Profile(props) {
   const classes = useStyle();
@@ -52,6 +53,9 @@ function Profile(props) {
               <LinkRouter className={path === '/about'? classes.activeLink : classes.link} to="/about" onClick={() => logEvent('clicked_about_me')}>
                 About me
               </LinkRouter>
+              <a className={classes.link} href = {Pdf} target = "_blank" onClick={() => logEvent('clicked_resume')}>
+                Resume
+              </a>
             </Grid>
             <Grid container justify="flex-start" direction="row" className={classes.socialMedia}>
               <Link href="https://github.com/prakort" style={{ marginLeft: -6}} onClick={() => logEvent('clicked_github')}>
