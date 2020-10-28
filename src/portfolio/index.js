@@ -20,7 +20,7 @@ const Projects =[
   {
     name: 'Eatco',
     details: 'Food delivery app for the locals in Windsor',
-    link: 'https://www.eatcohub.com/',
+    link: 'https://apps.apple.com/us/app/eatco/id1526510373',
     icon: require("../_images/eatco_2.png"),
     iconStyle: {
       width: 70,
@@ -30,7 +30,7 @@ const Projects =[
   {
     name: 'WD Border Traffic',
     details: 'WD Border Traffic',
-    link: 'https://www.eatcohub.com/',
+    link: 'https://play.google.com/store/apps/details?id=com.hsdeogan.WDBorderTraffic&hl=en_CA',
     icon: require("../_images/WD.png"),
     iconStyle: {
       width: 70,

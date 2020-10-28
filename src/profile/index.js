@@ -35,7 +35,7 @@ function Profile(props) {
             </Grid>
             <Grid className={classes.shortDescription}>
               <p>
-                A Senior Mathematics and Computer Science at University of Windsor
+                A 4th year Mathematics and Computer Science at University of Windsor
               </p>
             </Grid>
             {/* <Grid className={classes.shortDescription}>
