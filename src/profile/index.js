@@ -28,7 +28,7 @@ function Profile(props) {
 
             <img alt="Prakort Lean" className={classes.imageMe} src={require('../_images/prakort.png')}/>
        
-            <h3 alt="Prakort Lean full name" className={classes.fullName}>Prakort Lean <Link alt="Cambodia on the map" href={Cambodia_map_url}>🇰🇭</Link></h3>
+            <h3 alt="Prakort Lean full name" className={classes.fullName}>Prakort Lean</h3>
             
             <Grid container alignItems="center">
               <span alt="Prakort Lean full name" className={classes.location}>Windsor, Ontario, Canada </span>
